@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h4 class="card-title">Regitrar Clientes</h4>
+        <form ngNativeValidate #f="ngForm" (ngSubmit)="insertarCliente(f)" >
+          <div class="form-group">
+            <label>Nombre Completo</label>
+            <input  ngModel name="nombre" type="text" class="form-control" placeholder="Ingresa el nombre completo" required>
+            <small id="emailHelp" class="form-text text-muted">Ingresa el nombre completo del usuario.</small>
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">Genero</label>
+              <select ngModel name="genero" class="form-control" id="select" required>
+                <option value="0">Hombre</option>
+                <option value="1">Mujer</option>
+              </select>
+            </div>
+          <div class="form-group">
+            <label for="Fecha de Registro">Fecha de registro</label>
+            <input ngModel name="fecha" type="date" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

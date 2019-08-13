@@ -1,0 +1,65 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Busqueda de Cliente </h4>
+
+        <input  #input (keyup)="buscarCliente(input.value)" type="text" class="form-control" placeholder="Buscar Cliente">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="cargando">
+  <div class="col-sm-12">
+    <div class="alert alert-warning text-center">
+      <strong>Cargando</strong>
+      <br>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+      <br>
+      <span>Espere porfavor</span>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Usuarios Accedidos hoy (<small>{{totalRegistro}}</small>)</h3>
+        <table class="table table-hover">
+          <thead>
+            <th>Nombre</th>
+            <th>Sexo</th>
+            <th>Hora de Ingreso</th>
+            <th>Codigo</th>
+            <th>Fecha del ultimo pago</th>
+            <th>Acciones</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let x of clientes">
+              <td>{{x.nombre}}</td>
+              <td *ngIf="!x.sexo">Hombre</td>
+              <td *ngIf="x.sexo">Mujer</td>
+              <td> {{ x.fechayhora | date }} </td>
+              <td>{{x.codigo}}</td>
+              <td> {{ x.fechaIngreso | date }} </td>
+              <td>
+                <button class="btn btn-primary">
+                  <i class="fa fa-save"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-secondary">
+          Anteriores
+        </button>
+        <button class="btn btn-secondary">
+          Siguientes
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

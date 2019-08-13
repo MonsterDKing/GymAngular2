@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <!-- <h6 class="card-subtitle">Add class <code>.color-bordered-table .success-bordered-table</code></h6> -->
+        <div class="table-responsive">
+          <table class="table color-bordered-table danger-bordered-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Genero</th>
+                <th>Fecha de inscripcion</th>
+                <th>Fecha de ultimo pago</th>
+                <th>Fecha de vencimiento</th>
+                <th>Codigo</th>
+                <th>Estado</th>
+                <th>Imagen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of vencidos; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{c.nombre}}</td>
+                <td *ngIf="!c.sexo">Masculino</td>
+                <td *ngIf="c.sexo">Femenino</td>
+                <td>{{c.fechaIngreso | date}}</td>
+                <td>{{c.ultimopago | date}}</td>
+                <td>{{c.vencimiento | date}}</td>
+                <td>{{c.codigo}}</td>
+                <td *ngIf="c.estatus">Activo</td>
+                <td *ngIf="!c.estatus">Inactivo</td>
+                <td>
+                  <span class="round"><img [src]="c.img | imagen:'cliente'" alt="user" width="50"></span>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(../assets/images/background/gym.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    <form ngNativeValidate #f="ngForm" (ngSubmit)="ingresar(input.value)" class="form-horizontal form-material" id="loginform" >
+                        <div class="form-group">
+                            <div class="col-xs-12 text-center">
+                                <div class="user-thumb text-center"> <img alt="thumbnail" class="img-circle" width="100" src="https://via.placeholder.com/150">
+                                    <h3>Codigo</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input #input  #input class="form-control" type="number" required placeholder="Codigo de 4 Digitos">
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="col-xs-12">
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Acceder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
